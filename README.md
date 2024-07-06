@@ -1,7 +1,7 @@
 # MSQM grafana dashboard - MSMQ Grafana Exporter
 
-## Setup msmq exporter as windows service
-use NSSM tool
+## Install msmq exporter as windows service
+use [NSSM](https://nssm.cc/download) tool
 
 ![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/41b75208-40f5-49c6-ae9f-dc618ab7f36f)
 
@@ -17,7 +17,8 @@ use NSSM tool
        company: Jin
 ```
 
-![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/9f0f5134-b610-41bc-9513-0a3fe7800ff8)
+![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/d4df8adc-2b2a-4122-8234-9c74ac028f06)
+
 
 ## Import granafa dashboard
 - From [dashboard.json](https://github.com/minhhungit/msmq-grafana-dashboard/blob/main/dashboard.json)
