@@ -22,3 +22,8 @@ use NSSM tool
 ## Import granafa dashboard
 - From [dashboard.json](https://github.com/minhhungit/msmq-grafana-dashboard/blob/main/dashboard.json)
 - Or from grafana dashboard page: https://grafana.com/grafana/dashboards/21439-microsoft-message-queue-msmq/
+
+
+## Demo
+
+![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/fd261bc0-7f37-49c3-badd-c8a5b10f5234)
