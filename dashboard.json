@@ -74,7 +74,7 @@
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 18,
+            "fillOpacity": 0,
             "gradientMode": "hue",
             "hideFrom": {
               "legend": false,
@@ -86,7 +86,7 @@
             "lineStyle": {
               "fill": "solid"
             },
-            "lineWidth": 4,
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -104,7 +104,7 @@
           "decimals": 0,
           "displayName": "${__field.labels.name}",
           "mappings": [],
-          "min": 1,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -119,8 +119,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 14,
-        "w": 12,
+        "h": 9,
+        "w": 24,
         "x": 0,
         "y": 0
       },
@@ -180,7 +180,7 @@
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 15,
+            "fillOpacity": 1,
             "gradientMode": "hue",
             "hideFrom": {
               "legend": false,
@@ -189,7 +189,7 @@
             },
             "insertNulls": false,
             "lineInterpolation": "smooth",
-            "lineWidth": 4,
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -226,10 +226,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 14,
-        "w": 12,
-        "x": 12,
-        "y": 0
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 9
       },
       "id": 2,
       "options": {
@@ -269,7 +269,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "5s",
+  "refresh": "",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
@@ -325,13 +325,13 @@
     ]
   },
   "time": {
-    "from": "now-6h",
-    "to": "now"
+    "from": "2024-07-06T06:13:02.077Z",
+    "to": "2024-07-06T06:52:00.763Z"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Microsoft Message Queue - MSMQ Powershell",
   "uid": "edqwr4ku2eccge",
-  "version": 7,
+  "version": 8,
   "weekStart": ""
 }
