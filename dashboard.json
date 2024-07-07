@@ -25,6 +25,12 @@
     },
     {
       "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
       "id": "timeseries",
       "name": "Time series",
       "version": ""
@@ -55,6 +61,346 @@
   "links": [],
   "liveNow": true,
   "panels": [
+    {
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 8,
+      "title": "Queue",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "displayName": "${__field.labels.name}",
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 12,
+        "x": 0,
+        "y": 1
+      },
+      "id": 1,
+      "options": {
+        "legend": {
+          "calcs": [
+            "last",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Last",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "asc"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "msmq_queue_message_count{job=\"msmq_exporter\", machine_name=~\"$machine_name\", queue_name=~\"$queue_name\"}",
+          "format": "time_series",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{queue_name}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "MSMQ - Number of Messages",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 1,
+          "displayName": "${__field.labels.name}",
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 12,
+        "x": 12,
+        "y": 1
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [
+            "last",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Last",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "asc"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "msmq_queue_bytes_in_queue{job=\"msmq_exporter\", machine_name=~\"$machine_name\", queue_name=~\"$queue_name\"}",
+          "format": "time_series",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{queue_name}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "MSMQ - Bytes in Queue",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 7,
+      "panels": [],
+      "title": "Outgoing Queue",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "red",
+                  "index": 0,
+                  "text": "Disconnected"
+                },
+                "1": {
+                  "color": "green",
+                  "index": 1,
+                  "text": "Connected"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "max": 1,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 7,
+        "x": 0,
+        "y": 15
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "name",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "msmq_outgoing_queue_state{job=\"msmq_exporter\", connection_host=~\"$machine_name\", queue_name=~\"$outgoing_queue_name\"}",
+          "format": "time_series",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{queue_name}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "MSMQ - Outgoing - Status",
+      "type": "stat"
+    },
     {
       "datasource": {
         "type": "prometheus",
@@ -92,7 +438,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": 60000,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -119,17 +465,16 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
-        "w": 24,
-        "x": 0,
-        "y": 0
+        "h": 7,
+        "w": 17,
+        "x": 7,
+        "y": 15
       },
-      "id": 1,
+      "id": 9,
       "options": {
         "legend": {
           "calcs": [
             "last",
-            "max",
             "mean"
           ],
           "displayMode": "table",
@@ -137,7 +482,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "asc"
         }
       },
@@ -148,9 +493,9 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
+          "editorMode": "code",
           "exemplar": false,
-          "expr": "msmq_queue_message_count{machine_name=~\"$machine_name\", queue_name=~\"$queue_name\", job=\"msmq_exporter\"}",
+          "expr": "msmq_outgoing_queue_unprocessed_message_count{job=\"msmq_exporter\", connection_host=~\"$machine_name\", queue_name=~\"$outgoing_queue_name\"}",
           "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -162,7 +507,7 @@
           "useBackend": false
         }
       ],
-      "title": "MSMQ - Number of Messages",
+      "title": "MSMQ - Outgoing - Unprocessed",
       "type": "timeseries"
     },
     {
@@ -184,7 +529,7 @@
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 1,
+            "fillOpacity": 0,
             "gradientMode": "hue",
             "hideFrom": {
               "legend": false,
@@ -193,13 +538,16 @@
             },
             "insertNulls": false,
             "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "auto",
-            "spanNulls": false,
+            "showPoints": "never",
+            "spanNulls": 60000,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -218,34 +566,31 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
-          "unit": "bytes"
+          "unit": "none"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
-        "w": 24,
+        "h": 11,
+        "w": 12,
         "x": 0,
-        "y": 10
+        "y": 22
       },
-      "id": 2,
+      "id": 3,
       "options": {
         "legend": {
           "calcs": [
             "last",
-            "max",
             "mean"
           ],
           "displayMode": "table",
-          "placement": "right",
-          "showLegend": true
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last",
+          "sortDesc": true
         },
         "tooltip": {
           "mode": "multi",
@@ -259,9 +604,9 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
+          "editorMode": "code",
           "exemplar": false,
-          "expr": "msmq_queue_bytes_in_queue{machine_name=~\"$machine_name\", queue_name=~\"$queue_name\", job=\"msmq_exporter\"}",
+          "expr": "msmq_outgoing_queue_message_count{job=\"msmq_exporter\", connection_host=~\"$machine_name\", queue_name=~\"$outgoing_queue_name\"}",
           "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -273,7 +618,117 @@
           "useBackend": false
         }
       ],
-      "title": "MSMQ - Bytes in Queue",
+      "title": "MSMQ - Outgoing - Number of Messages",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": 60000,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "${__field.labels.name}",
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 12,
+        "x": 12,
+        "y": 22
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [
+            "last",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Last",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "asc"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "msmq_outgoing_queue_bytes_in_queue{connection_host=~\"$machine_name\", job=\"msmq_exporter\"}",
+          "format": "time_series",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{queue_name}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "MSMQ - Outgoing - Bytes in Messages",
       "type": "timeseries"
     }
   ],
@@ -316,7 +771,7 @@
         "hide": 0,
         "includeAll": true,
         "label": "Queue Name",
-        "multi": false,
+        "multi": true,
         "name": "queue_name",
         "options": [],
         "query": {
@@ -329,17 +784,41 @@
         "skipUrlSync": false,
         "sort": 5,
         "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "definition": "label_values(msmq_outgoing_queue_message_count{connection_host=~\"$machine_name\"},queue_name)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Outgoing Queue Name",
+        "multi": true,
+        "name": "outgoing_queue_name",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(msmq_outgoing_queue_message_count{connection_host=~\"$machine_name\"},queue_name)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 5,
+        "type": "query"
       }
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "Asia/Ho_Chi_Minh",
-  "title": "Microsoft Message Queue - MSMQ Powershell",
+  "title": "MSMQ w/ Powershell",
   "uid": "edqwr4ku2eccge",
-  "version": 10,
+  "version": 33,
   "weekStart": "monday"
 }
