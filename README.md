@@ -1,5 +1,11 @@
 # MSQM grafana dashboard - MSMQ Grafana Exporter
 
+
+## Demo
+
+![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/86e6f2af-7a6c-46d8-a680-f8a1cce937b1)
+
+
 ## Install msmq exporter as windows service
 use [NSSM](https://nssm.cc/download) tool
 
@@ -24,7 +30,3 @@ use [NSSM](https://nssm.cc/download) tool
 - From [dashboard.json](https://github.com/minhhungit/msmq-grafana-dashboard/blob/main/dashboard.json)
 - Or from grafana dashboard page: https://grafana.com/grafana/dashboards/21439-microsoft-message-queue-msmq/
 
-
-## Demo
-
-![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/fd261bc0-7f37-49c3-badd-c8a5b10f5234)
