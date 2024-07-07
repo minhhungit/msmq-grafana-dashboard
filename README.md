@@ -28,6 +28,9 @@ To install the MSMQ exporter as a Windows service, we recommend using the NSSM (
    nssm install msmq_exporter
    ```
 
+7. After install and start windows service, check http://localhost:9184/metrics to see if it works or not
+   
+
 ## Prometheus Configuration
 
 To configure Prometheus to scrape metrics from the MSMQ exporter, add the following job configuration to your `prometheus.yml` file:
