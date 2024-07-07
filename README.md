@@ -3,7 +3,8 @@
 This project provides a Grafana dashboard to monitor Microsoft Message Queue (MSMQ) metrics using a Prometheus exporter. The exporter can be installed as a Windows service using the NSSM tool.
 
 ## Screenshot
-![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/bd6d97ed-b8ee-4a76-a9f6-5c29500ec847)
+![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/086c22ff-b545-486e-b37f-3d11dbb4b668)
+
 
 ## Installation
 
