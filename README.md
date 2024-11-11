@@ -6,7 +6,7 @@ This project provides a Grafana dashboard to monitor Microsoft Message Queue (MS
 ![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/086c22ff-b545-486e-b37f-3d11dbb4b668)
 
 
-## Installation - This bellow tutorial for v1
+## Installation - This bellow tutorial for version 1, do the same for version 2 - remember to change parameters
 
 ### Install MSMQ Exporter as a Windows Service
 
