@@ -21,11 +21,12 @@ To install the MSMQ exporter as a Windows service, we recommend using the NSSM (
     .\nssm install msmq_exporter
     ```
 5. Config like bellow image
+
 ![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/41b75208-40f5-49c6-ae9f-dc618ab7f36f)
 
 6. Start service
    ```sh
-   nssm install msmq_exporter
+   nssm start msmq_exporter
    ```
 
 7. After install and start windows service, check http://localhost:9184/metrics to see if it works or not
