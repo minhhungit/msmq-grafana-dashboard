@@ -3,10 +3,10 @@
 This project provides a Grafana dashboard to monitor Microsoft Message Queue (MSMQ) metrics using a Prometheus exporter. The exporter can be installed as a Windows service using the NSSM tool.
 
 ## Screenshot
-![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/086c22ff-b545-486e-b37f-3d11dbb4b668)
+![image](https://github.com/user-attachments/assets/11d92619-db4b-47ee-9983-c3f008bbe3ed)
 
 
-## Installation - This bellow tutorial for version 1, do the same for version 2 - remember to change parameters
+## Installation
 
 ### Install MSMQ Exporter as a Windows Service
 
@@ -22,14 +22,15 @@ To install the MSMQ exporter as a Windows service, we recommend using the NSSM (
     ```
 5. Config like bellow image
 
-![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/41b75208-40f5-49c6-ae9f-dc618ab7f36f)
+![image](https://github.com/user-attachments/assets/e67c9ca2-4c8a-4b6e-912a-7134ebf3edb2)
+
 
 6. Start service
    ```sh
    nssm start msmq_exporter
    ```
 
-7. After install and start windows service, check http://localhost:9184/metrics to see if it works or not
+7. After install and start windows service, check http://localhost:9188/metrics to see if it works or not
    
 
 ## Prometheus Configuration
@@ -39,29 +40,21 @@ To configure Prometheus to scrape metrics from the MSMQ exporter, add the follow
 ```yaml
 - job_name: 'msmq_exporter'
   static_configs:
-    - targets: ['WEBSERVICE001:9184'] 
+    - targets: ['WEBSERVICE001:9188'] 
       labels:
         hostname: WEBSERVICE001
         type: windows
         company: Jin
 ```
 
-![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/d4df8adc-2b2a-4122-8234-9c74ac028f06)
+![image](https://github.com/user-attachments/assets/a3747372-2a54-4305-a691-071dd52b53c4)
+
 
 ## Import Grafana Dashboard
-To import the Grafana dashboard, you have two options:
-
-### Option 1: From dashboard.json
+Use .json file
 Download the dashboard.json file from this repository.
 Open Grafana and navigate to the dashboard import page.
-Upload the [dashboard.json](https://github.com/minhhungit/msmq-grafana-dashboard/blob/main/dashboard.json) file.
-
-### Option 2: From Grafana Dashboard Page
-Open Grafana and navigate to the dashboard import page.
-Enter ID `21439` [https://grafana.com/grafana/dashboards/21439-msmq-w-powershell/](https://grafana.com/grafana/dashboards/21439-msmq-w-powershell/)
-Click "Load" and follow the prompts to complete the import.
-
-![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/9d99340d-c31f-4c7c-96fe-f92ce99dbddb)
+Upload the [dashboard-v2.json](https://github.com/minhhungit/msmq-grafana-dashboard/blob/main/dashboard-v2.json) file.
 
 ## Contributing
 If you have any suggestions or improvements, feel free to create an issue or submit a pull request.
