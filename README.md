@@ -57,7 +57,7 @@ Upload the [dashboard.json](https://github.com/minhhungit/msmq-grafana-dashboard
 
 ### Option 2: From Grafana Dashboard Page
 Open Grafana and navigate to the dashboard import page.
-Enter ID `21439` (https://grafana.com/grafana/dashboards/21439-microsoft-message-queue-msmq/)
+Enter ID `21439` [https://grafana.com/grafana/dashboards/21439-msmq-w-powershell/](https://grafana.com/grafana/dashboards/21439-msmq-w-powershell/)
 Click "Load" and follow the prompts to complete the import.
 
 ![image](https://github.com/minhhungit/msmq-grafana-dashboard/assets/2279508/9d99340d-c31f-4c7c-96fe-f92ce99dbddb)
